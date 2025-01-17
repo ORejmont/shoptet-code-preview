@@ -1,0 +1,297 @@
+$transparent-background: rgba(255, 255, 255, .1);
+$element-height: 50px;
+$element-height-mobile: 40px;
+
+@mixin cart-button-style {
+  background-color: $transparent-background;
+  border-radius: $border-radius;
+  padding: 10px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $element-height;
+
+  &::before {
+    content: '';
+    display: flex;
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-size: contain;
+    background-image: url(https://cdn.myshoptet.com/usr/640084.myshoptet.com/user/documents/base-style/img/cart.svg);
+    background-repeat: no-repeat;
+    margin-right: 0;
+  }
+
+  i {
+    background-color: #FF0000;
+    left: auto;
+    right: -8px;
+    top: -9px;
+    padding: 2px 3px;
+    width: auto;
+    height: auto;
+    min-height: 18px;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    font-weight: 700;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  // Obecné úpravy
+  .top-navigation-bar .top-nav-button-account,
+  .top-navigation-bar .top-nav-button-login {
+    display: none;
+  }
+
+  .top-navigation-bar {
+    display: none;
+  }
+
+  // Konec obecných úprav
+
+  #header {
+    border-style: none;
+    position: sticky;
+    top: -90px;
+    z-index: 99;
+    border-bottom: 2px solid #F5F5F5;
+
+    .header-top {
+      padding: 20px 0;
+
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        background-color: $color-primary;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+
+
+      // Úprava loga
+      .site-name {
+        display: flex;
+      }
+
+      // Konec úpravy loga
+
+      .navigation-buttons {
+        margin-left: auto;
+        padding: 0;
+
+        // Úprava přihlášení
+        >a[data-target=login] {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: $border-radius;
+          padding: 0;
+          margin: 0;
+          margin-left: 15px;
+          background-color: $transparent-background;
+          width: $element-height;
+          height: $element-height;
+
+          &::before {
+            content: '';
+            display: flex;
+            width: 28px;
+            height: 28px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-image: url(https://cdn.myshoptet.com/usr/640084.myshoptet.com/user/documents/base-style/img/account.svg);
+          }
+
+          span {
+            display: none;
+          }
+
+          transition-duration: .3s;
+
+          &:hover {
+            opacity: .7;
+          }
+        }
+
+        // Konec úpravy přihlášení
+
+        // Úprava košíku
+        .btn.cart-count {
+          @include cart-button-style;
+
+          color: #fff;
+          margin-left: 15px;
+
+
+          transition-duration: .3s;
+
+          &:hover {
+            opacity: .7;
+          }
+
+          .cart-price {
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-block !important;
+            margin-left: 10px;
+          }
+        }
+
+        // Konec úpravy košíku
+      }
+
+      // Úprava vyhledávání
+      .search {
+        flex: 1;
+        margin-left: 40px;
+
+        .compact-form {
+          .form-control {
+            height: $element-height;
+            border-radius: $border-radius;
+            border-style: none;
+            font-size: 14px;
+            font-weight: 400;
+            color: $color-black;
+
+            padding: 9px ($element-height + 10px) 9px 20px;
+
+            &::placeholder {
+              color: #9C9C9C;
+            }
+          }
+
+          .btn {
+            background-color: transparent;
+            border-style: none;
+            height: $element-height;
+            width: $element-height;
+            padding: 0;
+            border-radius: $border-radius;
+
+            font-size: 0;
+            line-height: 0;
+
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(https://cdn.myshoptet.com/usr/640084.myshoptet.com/user/documents/base-style/img/search.svg);
+
+            transition-duration: .3s;
+
+            &:hover {
+              opacity: .7;
+            }
+          }
+        }
+      }
+
+      // Konec úpravy vyhledávání
+    }
+
+    // Úprava odkazů
+    $nav-height: 45px;
+    $nav-link-half-space: 20px;
+
+    #navigation {
+      margin-left: -$nav-link-half-space;
+      margin-right: -$nav-link-half-space;
+
+      height: $nav-height;
+
+      .navigation-in {
+        background-color: transparent;
+
+        >ul>li {
+          border-style: none;
+
+          a {
+            margin: 0 !important;
+            padding: 15.5px $nav-link-half-space;
+            color: $color-black;
+            font-size: 16px;
+            font-weight: 400;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    // Koenc úpravy Odkazů
+
+    // Úprava hamburger menu
+    .menu-helper,
+    .menu-trigger {
+      bottom: 0;
+      top: auto;
+      height: $nav-height;
+
+      &::after {
+        background-color: transparent;
+        color: $color-primary;
+      }
+
+      /* Dodělat úpravu odkazů + nahradit hamburger svg ikonou */
+    }
+
+    // Konec úpravy hamburger menu
+  }
+}
+
+// Mobilní verze
+@media (max-width: 767px) {
+  .top-navigation-bar {
+    background-color: $color-primary;
+
+    .responsive-tools {
+      padding: 0;
+      height: $element-height-mobile + 12px;
+    }
+  }
+
+  #header {
+
+    // Úprava košíku
+    .cart-count {
+      @include cart-button-style;
+
+      height: $element-height-mobile;
+      width: $element-height-mobile;
+
+      top: -44px;
+
+      &::before {
+        background-size: 22px;
+      }
+
+      i {
+        top: -3px;
+      }
+    }
+
+    // Konec úpravy košíku
+
+    /* Dodělat navigaci pro mobilní verzi */
+  }
+}
+
+// Konec mobilní verze

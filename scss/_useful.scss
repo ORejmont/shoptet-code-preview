@@ -1,0 +1,68 @@
+/* Font */
+* {
+  font-family: "Nunito Sans", serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+/* Admin bar dolů na stránku */
+@media (min-width: 992px) {
+  .admin-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+
+    .container>ul>li>ul {
+      top: 0px;
+      transform: translateY(-100%);
+    }
+  }
+}
+
+/* Očištění vzhledu stránky (odebrání zbytečných borderů a pozadí) */
+.homepage-box {
+  background-color: transparent;
+  border-style: none;
+}
+
+/* Reset navigation alignment */
+.header-top {
+  height: auto;
+
+  >div {
+    flex: initial;
+  }
+}
+
+/* Zarovnání navigace */
+#header .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Šířka stránky na desktopu (šířka nesmí být vštší než min-width + přidat nějaký spacing) */
+.container {
+  @media (min-width: 768px) {
+    width: 768px - 30px * 2;
+  }
+
+  @media (min-width: 992px) {
+    width: 992px - 50px * 2;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px - 50px * 2;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1440px - 50px * 2;
+  }
+
+  @media (min-width: 1630px) {
+    width: 1630px - 50px * 2;
+  }
+}

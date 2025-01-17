@@ -1,0 +1,16 @@
+{
+  "name": "jsminifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "minify:js": "uglifyjs ./scripts/script.js -c -m -o ./build/scripts/script.min.js",
+    "watch": "nodemon --watch ./scripts/script.js --exec \"npx npm run minify:js\""
+  },
+  "author": "Andrew",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.1",
+    "uglify-js": "^3.17.4"
+  }
+}

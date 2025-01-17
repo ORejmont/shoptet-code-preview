@@ -1,0 +1,33 @@
+// Info pruh
+.site-msg.information {
+  max-width: none;
+  position: initial;
+  background-color: #fff;
+  border-style: none;
+  opacity: 1;
+  line-height: 1.2;
+  box-shadow: none;
+
+  min-height: 30px;
+
+  .text {
+    color: $color-primary;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .close {
+    transition-duration: .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &::before {
+      color: $color-primary;
+    }
+  }
+}
+
+// Info pruh
