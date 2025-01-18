@@ -95,7 +95,8 @@ $element-height-mobile: 40px;
         padding: 0;
 
         // Úprava přihlášení
-        >a[data-target=login] {
+        >a[data-target=login],
+        .top-nav-button-account {
           display: flex;
           align-items: center;
           justify-content: center;

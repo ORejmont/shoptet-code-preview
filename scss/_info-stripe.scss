@@ -2,7 +2,7 @@
 .site-msg.information {
   max-width: none;
   position: initial;
-  background-color: #fff;
+  background-color: #1a2f57;
   border-style: none;
   opacity: 1;
   line-height: 1.2;
@@ -11,7 +11,7 @@
   min-height: 30px;
 
   .text {
-    color: $color-primary;
+    color: #fff;
     font-weight: 600;
     text-align: center;
     font-size: 14px;
@@ -25,7 +25,7 @@
     }
 
     &::before {
-      color: $color-primary;
+      color: #fff;
     }
   }
 }
